@@ -19,8 +19,11 @@ class CustomUserAdmin(UserAdmin):
         (None, {"fields": ("name",)}),
     )
 
-    add_fieldsets = UserAdmin.add_fieldsets + (
-        (None, {"fields": ("name",)}),
+    add_fieldsets = (
+        (None, {
+            "classes": ("wide",),
+            "fields": ("email", "username", "name", "password1", "password2"),
+        }),
     )
 
 # CustomUser ni admin panelga ro‘yxatdan o‘tkazish
