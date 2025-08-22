@@ -43,11 +43,14 @@ INSTALLED_APPS = [
     "corsheaders",
 
 ]
-REST_FRAMEWORK = {  # new
+# django_project/settings.py
+REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.AllowAny",
+        "rest_framework.permissions.IsAuthenticated",
     ],
 }
+# new
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
